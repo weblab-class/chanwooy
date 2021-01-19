@@ -1,0 +1,20 @@
+.Navigation-container {
+    background-color: gray;
+}
+
+.Navigation-link,
+.Navigation-link:visited {
+    margin: var(--m);
+    text-decoration: none;
+    color: white;
+}
+
+.Navigation-mainlink {
+    font-size: var(--l);
+}
+
+.Navigation-normalLinks {
+    display: inline-flex;
+    justify-self: flex-start;
+}
+
