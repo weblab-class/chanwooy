@@ -11,6 +11,9 @@ import Navigation from "./modules/Navigation.js";
 import About from "./pages/About.js";
 import Resources from "./pages/Resources.js";
 import ContentMenu from "./pages/ContentMenu.js";
+import DBWriter from "./pages/DBWriter.js";
+import Game from "./pages/Game/Game.js";
+import Log from "./pages/Log.js";
 
 import { get, post } from "../utilities";
 
@@ -29,6 +32,7 @@ class App extends Component {
   componentDidMount() {
     get("/api/whoami").then((user) => {
       if (user._id) {
+        console.log("user id is : " + user._id);
         // they are registed in the database, and currently logged in.
         this.setState({ userId: user._id });
       }
@@ -50,6 +54,7 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state.userId);
     return (
       <>
         <Navigation 
@@ -58,16 +63,22 @@ class App extends Component {
           userId={this.state.userId}
         />
 
+        {/* <div className = "App-body">
+          hello
+        </div> */}
+
         <div className = "App-body">
           <Router>
-            <Skeleton
-              path="/"
-            />
+            <Skeleton path="/" />
             <About path = "/about/" /> 
 
             <Resources path = "/resources/" />
             
             <ContentMenu path = "/modules/" userId = {this.state.userId} />
+
+            <Game path = "/game/" userId = {this.state.userId}/>
+
+            <Log path = "/log/" googleId = {this.state.userId}/>
             
             <NotFound default />
           </Router> 

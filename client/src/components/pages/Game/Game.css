@@ -1,0 +1,59 @@
+.Game-container {
+    padding-top: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.Game-rightButton {
+    width: 80px;
+    height: 20px;
+    background-color: green;
+    border-radius: 14px;
+    text-align: center;
+    color: white;
+    border: 5px;
+
+    padding: 5px;
+    margin-right: 12px;
+
+}
+.Game-wrongButton {
+    width: 80px;
+    height: 20px;
+    background-color: red;
+    border-radius: 14px;
+    text-align: center;
+    color: white;
+    border: 5px;
+
+    padding: 5px;
+    margin-left: 12px;
+}
+
+.Game-wrongButton:hover {
+    cursor:pointer;
+}
+
+.Game-buttonLayout {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 25px;
+}
+
+.Game-scoreBox {
+    padding-top: 15px;
+}
+
+.Game-retryButton {
+    width: 56px;
+    height: 24px;
+    background-color: black;
+    border-radius: 14px;
+    text-align: center;
+    color: white;
+    border: 5px;
+}
+
+.Game-retryButton:hover {
+    cursor:pointer;
+}

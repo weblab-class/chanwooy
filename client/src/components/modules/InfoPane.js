@@ -16,10 +16,22 @@ class InfoPane extends Component {
     //add function to interpret how the text property will be interpreted
 
     render() {
+        let referenceText = this.props.text;
+        let interpretedText = [];
+        let lastSavedIndex = 0;
+        for(let i = 0; i < referenceText.length - 1; i++) {
+            if(referenceText.substring(i, i + 2) == "\\n") { //new line formatting
+                interpretedText.push(<p>{referenceText.substring(lastSavedIndex, i)}</p>);
+                i += 2;
+                lastSavedIndex = i;
+            }
+        }
+        interpretedText.push(<p>{referenceText.substring(lastSavedIndex)}</p>);
+
         return(
             <div>
-                <h1 className = "InfoPane-heading" >{this.props.heading}</h1>
-                <p className = "InfoPane-content">{this.props.text}</p>
+                <h2 className = "InfoPane-heading" >{this.props.heading}</h2>
+                <div>{interpretedText}</div>
             </div>
         );
     }

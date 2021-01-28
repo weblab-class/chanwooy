@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "../../utilities.css";
+import "./ContentMenu.css";
 import InfoPane from "../modules/InfoPane.js";
 import NotFound from "./NotFound";
 import {get, post} from "../../utilities";
+
 
 //a page with access to various modules; modules so far haven't been populated with actual information
 class ContentMenu extends Component {
@@ -79,9 +81,9 @@ class ContentMenu extends Component {
 
         for(let i = 0; i < modulePages.length; i++) {
             buttons.push(
-                <button onClick = {() => {this.setState({currentModuleNumber: i})}}> 
+                <div className = "ContentMenu-moduleButton u-pointer" onClick = {() => {this.setState({currentModuleNumber: i})}}> 
                     Module {i + 1} 
-                </button>
+                </div>
             );
         }
         
@@ -95,13 +97,16 @@ class ContentMenu extends Component {
                 {
                     (this.state.currentModuleNumber > -1) ? 
                         (
-                            <div>
-                                <button onClick = {() => this.setState({currentModuleNumber: undefined})}>Menu</button>
+                            <div className = "ContentMenu-buttonContainer">
+                                <h1>{"Module " + this.state.currentModuleNumber}</h1>
+                                <div className = "ContentMenu-menuButton u-pointer" onClick = {() => this.setState({currentModuleNumber: undefined})}>Menu</div>
                                 {specifiedModulePage}
                             </div>
                         )
                         : 
-                        this.state.moduleButtons
+                        <div className = "ContentMenu-flexBox">
+                            {this.state.moduleButtons}
+                        </div>
                 }
             </>
         ) : (

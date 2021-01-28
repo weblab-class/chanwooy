@@ -1,0 +1,41 @@
+.ContentMenu-buttonContainer {
+    /* margin-top: -21px; */
+    padding-top: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.ContentMenu-menuButton {
+    width: 56px;
+    height: 24px;
+    background-color: black;
+    border-radius: 14px;
+    text-align: center;
+    color: white;
+    border: 5px;
+}
+
+.ContentMenu-moduleButton {
+    margin: 10px;
+    padding: 5px;
+    width: 80px;
+    height: 24px;
+    background-color: rgb(88, 156, 57);
+    border-radius: 14px;
+    text-align: center;
+    color: white;
+    border: 5px;
+}
+
+.ContentMenu-moduleButton:hover {
+    cursor:pointer;
+}
+
+.ContentMenu-flexBox {
+    padding-top: 20px;
+    padding-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 100px;
+}

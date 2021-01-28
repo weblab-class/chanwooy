@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import resource from "../../../../server/models/resource";
 import "../../utilities.css";
+import "./Resources.css";
 import InfoPane from "../modules/InfoPane.js";
 import {get, post} from "../../utilities";
 
@@ -20,12 +21,12 @@ class Resources extends Component {
     }
 
     render() {
-        console.log(this.state.resourceList[0]);
         return (
-            <div>
+            <div className = "Resources-container">
+                <h1>Resources</h1>
                 {this.state.resourceList.map((resourceObj) => (
                     <ul>
-                        <li>{resourceObj.organization} - {<a href = {resourceObj.url}>link</a>}</li>
+                        <li>{resourceObj.organization} - {<a className = "Resources-links" href = {resourceObj.url}>link</a>}</li>
                     </ul>
                     
                 ))}

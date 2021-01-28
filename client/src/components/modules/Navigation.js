@@ -28,9 +28,17 @@ class Navigation extends Component {
                     <span className = "Navigation-normalLinks">
                         {
                             this.props.userId ? (
-                                <Link to = "/modules/" className = "Navigation-link">
-                                    Modules
-                                </Link>
+                                <>
+                                    <Link to = "/modules/" className = "Navigation-link">
+                                        Modules
+                                    </Link>
+                                    <Link to = "/game/" className = "Navigation-link">
+                                        Quiz
+                                    </Link>
+                                    <Link to = "/log/" className = "Navigation-link">
+                                        Recycle Log
+                                    </Link>
+                                </>
                             ) : (
                                 <></>
                             )

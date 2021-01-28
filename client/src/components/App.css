@@ -1,9 +1,8 @@
-.App-BackgroundPicture {
-    /* background-position-y: 100px; */
-    /* width: 600px;
-    height: 600px;
-    resize: both;
-    background-size: contain;
-    align-self: baseline; */
+.App-body {
+    width: 100%;
+    height:100vh;
+    background-color: #f7e6d7;
+    /* #f0e0d1; */
+    padding: 0px;
 } 
 

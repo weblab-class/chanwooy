@@ -22,9 +22,13 @@ const router = express.Router();
 const AboutSection = require("./models/aboutsection.js");
 const Module = require("./models/module.js");
 const Resource = require("./models/resource.js");
+const GameResource = require("./models/gameresource.js");
+const RecycleLog = require("./models/recyclelog.js");
+
 
 //initialize socket
 const socketManager = require("./server-socket");
+const { db } = require("./models/user");
 
 router.post("/login", auth.login);
 router.post("/logout", auth.logout);
@@ -47,11 +51,21 @@ router.post("/initsocket", (req, res) => {
 // | write your API methods below!|
 // |------------------------------|
 
-
-
 router.get("/module", (req, res) => {
   Module.find({}).then((modules) => {
     res.send(modules);
+  });
+});
+
+router.post("/module", (req, res) => {
+  const newModuleInfo = new Module({
+    title: req.body.title,
+    content: req.body.content,
+    moduleNumber: req.body.moduleNumber,
+    nth: req.body.nth,
+  });
+  newModuleInfo.save().then((newModule) => {
+    res.send(newModule);
   });
 });
 
@@ -74,6 +88,25 @@ router.post("/aboutsection", (req, res) => {
   newInfo.save().then((story) => res.send(story));
 });
 
+router.get("/log", (req, res) => {
+  // res.send("hello");
+  RecycleLog.find({}).then((logs) => {
+    res.send(logs);
+  });
+});
+
+router.post("/log", (req, res) => {
+    const log = new RecycleLog({
+      recycled: req.body.recycled,
+      date: req.body.date,
+      googleid: req.body.googleId,
+    });
+    
+    log.save().then(() => {res.send(log);});
+  });
+  
+// });
+
 //not needed as of now
 router.get("/usermodule", (req, res) => {
   User.find({ googleid: req.query.googleid }).then((user) => {
@@ -84,6 +117,12 @@ router.get("/usermodule", (req, res) => {
 router.get("/resource", (req, res) => {
   Resource.find({}).then((resourceList) => {
     res.send(resourceList);
+  });
+});
+
+router.get("/game", (req, res) => {
+  GameResource.find({}).then((gameResource) => {
+    res.send(gameResource);
   });
 });
 

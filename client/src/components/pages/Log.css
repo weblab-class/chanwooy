@@ -1,0 +1,31 @@
+.Log-container {
+    /* margin-top: -21px; */
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 5px;
+}
+
+.Log-addButton {
+    width: 50px;
+    height: 20px;
+    background-color: black;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    border: 5px;
+
+}
+
+.Log-addButton:hover {
+    cursor:pointer;
+}
+
+.Log-input {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 5px;
+}
+
+.Log-inputField {
+    padding-top: -20px;
+}

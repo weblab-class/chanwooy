@@ -23,11 +23,11 @@ class Skeleton extends Component {
 
   render() {
     return (
-      <>
-        <div className = "Homepage-tree"></div> 
-        {/* {I was initially going to put an image here; kept having issues with formatting so decided to skip it for later} */}
-        
-      </>
+      <div className = "Skeleton-quoteTransition">
+        <h1>Recycling is our path to the future.</h1> 
+        <h2>Will You Join Us?</h2> 
+        <div class = "Skeleton-ReachingOut"></div>
+      </div>
     );
   }
 }
